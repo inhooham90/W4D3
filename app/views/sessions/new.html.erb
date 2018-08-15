@@ -1,0 +1,24 @@
+<h1>Sign In</h1>
+
+<p><%= render "shared/errors" %></p>
+
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="username">User Name</label>
+  <input
+    type="text"
+    name="user[username]"
+    id="username">
+
+  <br>
+
+  <label for="password">Password</label>
+  <input
+    type="text"
+    name="user[password]"
+    id="password">
+
+
+  <input type="submit" value="Submit">
+</form>
