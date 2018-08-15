@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_cat_owner!
-   redirect_to cats_url unless current_user.cats.pluck(:id).include?(Cat.find_by(id: params[:id]))
+   redirect_to cats_url unless current_user.cats.pluck(:id).include?(params[:id].to_i)
   end
 
   def logout_user!
